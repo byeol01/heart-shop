@@ -1,0 +1,721 @@
+body {
+  overflow-x: hidden;
+}
+
+#section2 {
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  border-top: 3px dashed #ffcf85;
+  background-image: url(../img/bakimage3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* 전체 컨테이너 */
+.main-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 40px;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
+}
+
+.map-wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr 600px;
+  margin-top: 7%;
+}
+
+.region-description {
+  width: 260px;
+  padding: 20px;
+}
+
+/*
+.region-description:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 105, 135, 0.3);
+} */
+
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #ff6f91;
+  margin-bottom: 12px;
+  margin-top: 7px;
+  font-family: 'Jua', sans-serif;
+  text-shadow: 1px 1px 0 #ffe4ec;
+}
+
+
+
+
+/* 상단 선택자 컨테이너 */
+.selector-container {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+/* select 박스 스타일 */
+.region-select {
+  min-width: 200px;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: 3.8px solid #b8d8b3;
+  border-radius: 30px;
+  box-shadow: 0 2px 6px rgba(255, 204, 172, 0.25);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s ease;
+  background-color: white;
+}
+
+.region-select:focus {
+  border-color: #b8d8b3;
+  box-shadow: 0 0 0 3px #b8d8b3;
+}
+
+/* 본문 영역 - 지도+클래스 리스트 */
+.content-container {
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* 지도 영역 */
+.map-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-7%);
+}
+
+/* 지도 이미지 */
+
+.modal img {
+  width: 100%;
+  height: 200px;
+  /* 고정 높이 */
+  object-fit: cover;
+  /* 비율 유지하면서 잘림 */
+  border-radius: 14px;
+  /* 둥근 테두리 */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  /* 부드러운 그림자 */
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatIn 0.5s ease-out;
+}
+
+
+
+/* 지도 위 버튼 */
+.region-button {
+  position: absolute;
+  background: #f6f5c1;
+  border: 2px solid #f6f5c1;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+  user-select: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(43, 112, 58, 0.3);
+  transition: background-color 0.3s, color 0.3s;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+}
+
+.region-hover-image {
+  border-radius: 16px;
+  animation: fadeZoom 0.4s ease-out forwards;
+  transform-origin: center center;
+  /* 중심 기준 확대 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  /* 초기 위치 + 크기 */
+
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+.region-button:hover {
+  background-color: #f6f5c1;
+  border: 2px solid #4a6b4c;
+  color: black
+}
+
+/* 클래스 리스트 영역 */
+.class-container {
+  flex: 1;
+  max-width: 600px;
+  height: 700px;
+  background-color: #f6f5c1;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: center;
+  transform: translateX(-4%);
+}
+
+.class-box:hover {
+  box-shadow: 0 8px 24px rgba(66, 244, 90, 0.2);
+  transform: scale(1.01);
+  transition: transform 0.2s ease-in-out;
+}
+
+.class-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.floating-image {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 230px;
+  height: 109px;
+  transition: top 0.4s ease;
+  z-index: 1;
+}
+
+.floating-image.moved {
+  top: 90px;
+  /* .title 높이에 맞게 조정 */
+}
+
+/* 타이틀 텍스트 */
+.title {
+  font-size: 0px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #b8d8b3;
+  padding-bottom: 6px;
+}
+
+/* 타이틀과 함께 표시되는 배경 이미지 */
+.bg-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  /* 이미지 클릭 방지 */
+  user-select: none;
+  /* 이미지 선택 방지 */
+
+}
+
+/* 지역 미선택 시 - 큰 이미지: 문구 밑에 크게 */
+.bg-image.large {
+  width: 555px;
+  height: auto;
+  top: 60%;
+  right: 20px;
+  opacity: 1;
+
+}
+
+/* 지역 선택 시 - 상단 오른쪽에 작게 */
+.bg-image.small {
+  width: 248px;
+  height: auto;
+  top: 5px;
+  right: 30px;
+  opacity: 1;
+}
+
+.class-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+  max-height: 500px;
+  padding-right: 6px;
+  /* 스크롤바 공간 확보 */
+}
+
+/* 스크롤바 스타일 */
+.class-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.class-list::-webkit-scrollbar-thumb {
+  background-color: #4a6b4c;
+  border-radius: 3px;
+}
+
+.class-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.class-list.empty::before {
+  content: '해당 지역에 등록된 클래스가 없어요 😢';
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+  padding: 40px 0;
+}
+
+/* 개별 클래스 박스 */
+.class-box {
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  background-color: #f9faff;
+  box-shadow: 0 4px 12px rgba(66, 244, 155, 0.1);
+  align-items: center;
+  transition: box-shadow 0.3s;
+  cursor: default;
+}
+
+.class-box:hover {
+  box-shadow: 0 8px 24px rgba(66, 244, 90, 0.2);
+}
+
+/* 클래스 이미지 */
+.class-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(241, 244, 66, 0.15);
+  flex-shrink: 0;
+}
+
+/* 클래스 정보 */
+.class-info {
+  flex: 1;
+}
+
+.class-info h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #3a3a3a;
+}
+
+.class-info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.class-info p b {
+  color: #4a6b4c;
+}
+
+/* 좋아요 & 더보기 버튼 영역 */
+.class-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 17px;
+  justify-content: end;
+}
+
+
+/* 찜하기 버튼 */
+.like-button {
+  background-color: transparent;
+  border: 2px solid #b8d8b3;
+  color: black;
+  padding: 7px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+  user-select: none;
+}
+
+.like-button:hover {
+  background-color: #4a6b4c;
+  color: white;
+  border: 2px solid #4a6b4c;
+}
+
+.like-button.liked {
+  background-color: #b8d8b3;
+  border-color: #b8d8b3;
+  color: black;
+}
+
+.like-button.liked:hover {
+  background-color: #4a6b4c;
+  border-color: #4a6b4c;
+  color: white;
+}
+
+/* 더보기 버튼 */
+.more-button {
+  background-color: #f6f5c1;
+  border: 2px solid #b8d8b3;
+  color: black;
+  padding: 7px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+.modal .modal-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ffb6c1;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal .modal-button:hover {
+  background-color: #4a6b4c;
+  transform: scale(1.05);
+}
+
+.more-button:hover {
+  background-color: #4a6b4c;
+  color: white;
+  border: 2px solid #4a6b4c;
+}
+
+/* 기본 모달 - 스크롤 막기 */
+.modal-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-height: 90vh;
+  background: rgba(254, 254, 236, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  box-sizing: border-box;
+  height: 758px;
+  overflow: hidden;
+  /* 기본은 숨김 */
+}
+
+/* 회원가입용 클래스: 스크롤 가능하게 만듦 */
+.modal-overlay.signup-scroll {
+  overflow-y: auto;
+}
+
+.modal {
+  background-color: #fff0f6;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 30px 40px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+  /* animation: popUp 0.3s ease-out; */
+}
+
+/* @keyframes popUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+} */
+
+.modal::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-image: url(../img/all.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: bottom;
+  opacity: 0.2;
+  /* 불투명도 조절 */
+  z-index: 0;
+}
+
+/* 모달 내용은 위로 */
+.modal>* {
+  position: relative;
+  z-index: 1;
+}
+
+.modal h2 {
+  font-size: 24px;
+  color: #ff69b4;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modal p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.modal .modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ff69b4;
+}
+
+.modal img {
+  width: 400px;
+  height: 300px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .class-container {
+    transform: none;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .map-container {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .floating-image {
+    display: none;
+  }
+}
+
+.apply-button {
+  background-color: transparent;
+  border: 2px solid #b8d8b3;
+  color: black;
+  padding: 7px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s;
+  user-select: none;
+}
+
+.apply-button:hover {
+  background-color: #4a6b4c;
+  border-color: #4a6b4c;
+  color: white;
+}
+
+.class-actions .apply-button {
+  margin-left: 8px;
+}
+
+.modal .apply-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+/* -----------------------------------
+📱 Mobile Styles (max-width: 767px)
+----------------------------------- */
+@media (max-width: 767px) {
+  .main-container {
+    gap: 20px;
+    padding: 16px;
+  }
+
+  .section-title {
+    transform: translateY(-450%);
+  }
+
+  .map-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 24px;
+  }
+
+  .region-description {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .selector-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .region-select {
+    min-width: auto;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .map-container {
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  .class-container {
+    width: 100%;
+    padding: 16px;
+    border-radius: 16px;
+    height: auto;
+    max-height: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .class-list {
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .class-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .class-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .class-info h3 {
+    font-size: 18px;
+  }
+
+  .class-info p {
+    font-size: 13px;
+  }
+
+  .class-actions {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .floating-image,
+  .bg-image.small {
+    display: none;
+  }
+
+  .bg-image.large {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    opacity: 0.1;
+  }
+
+  .modal-overlay {
+    width: 95%;
+    height: auto;
+    max-height: 90vh;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .modal img {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal h2 {
+    font-size: 20px;
+  }
+
+  .modal p {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    width: 100%;
+    transform: translateY(-32%);
+  }
+
+  .back-button {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    text-align: center;
+    color: #4a6b4c !important;
+    background: none;
+    border: none;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+
+  .title {
+    font-size: 0px;
+    /* 유지하거나 제거 가능 */
+  }
+}

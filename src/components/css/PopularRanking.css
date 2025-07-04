@@ -1,0 +1,91 @@
+.ranking {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  height: 350px;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 360px;
+  overflow: hidden;
+}
+
+.ranking-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.ranking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ranking-list li {
+  margin: 20px;
+}
+
+.ranking-list li a h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 0;
+}
+
+.rank-number {
+  font-weight: bold;
+  font-size: 18px;
+  width: 24px;
+  color: #4a6b4c;
+  text-align: right;
+}
+
+.rank-thumbnail {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.rank-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rank-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #222;
+}
+
+.rank-subtitle {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* .top-ranked {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  transform: scale(1.03);
+} */
+/* .top-ranked .rank-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #333;
+} */

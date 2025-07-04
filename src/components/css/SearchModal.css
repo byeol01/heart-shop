@@ -1,0 +1,247 @@
+/* ===========================
+   🔍 공통 버튼
+=========================== */
+.btn-search {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #6b4c3b;
+  transition: transform 0.2s ease;
+}
+
+.btn-search:hover {
+  transform: scale(1.1);
+}
+
+/* ===========================
+   💡 모달 스타일
+=========================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 120px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff8e7;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: popUp 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #a37c5e;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+}
+
+.modal-input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: 1px dashed #eea84e;
+  border-radius: 20px;
+  background: #fffdf8;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   🕘 최근 검색어, 🔥 인기 검색어, 🧠 관련 검색어 공통
+=========================== */
+.search-history,
+.popular-keywords,
+.related-results {
+  margin-top: 24px;
+}
+
+.search-history h4,
+.popular-keywords h4,
+.related-results h4 {
+  font-size: 14px;
+  color: #8b6f57;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+/* 공통 리스트 */
+.search-history ul,
+.popular-keywords ul,
+.related-results ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  border-top: 1px dashed #eadcc2;
+}
+
+/* 공통 아이템 */
+.search-history li,
+.popular-keywords li,
+.related-results li {
+  padding: 10px 0;
+  border-bottom: 1px dashed #f2e5cd;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-history li:hover,
+.popular-keywords li:hover,
+.related-results li:hover {
+  background: #fff2dc;
+  border-radius: 8px;
+}
+
+.search-history li span {
+  flex: 1;
+  cursor: pointer;
+}
+
+/* 삭제 버튼 */
+.btn-delete-history {
+  background: none;
+  border: none;
+  color: #a98b6c;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-delete-history:hover {
+  color: #d66;
+  transform: scale(1.2);
+}
+
+/* 전체 삭제 버튼 */
+.search-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.btn-clear-all {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #a98b6c;
+  cursor: pointer;
+  padding: 4px 6px;
+  transition: color 0.2s ease;
+}
+
+.btn-clear-all:hover {
+  color: #d66;
+}
+
+/* ===========================
+   🌈 감정 태그
+=========================== */
+.emotion-tags {
+  margin-top: 24px;
+}
+
+.emotion-tags h4 {
+  font-size: 14px;
+  color: #8b6f57;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.emotion-tags ul {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: none;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.emotion-tag-item {
+  background-color: #f7ecd9;
+  color: #6b4c3b;
+  font-size: 14px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  padding: 7px;
+  gap: 3px;
+}
+
+.emotion-tag-item span:first-child {
+  font-size: 2rem;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+
+.emotion-tag-item span:last-child {
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.emotion-tag-item:hover {
+  background-color: #a37c5e;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   🎞 애니메이션
+=========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

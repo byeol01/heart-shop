@@ -1,0 +1,56 @@
+
+#section1 .character-bar-container {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-45px);
+  max-width: 305px;
+  margin-left: 40px;
+  height: 43px;
+  background-color: var(--main-color);
+  border-radius: 12px;
+  overflow: visible;
+}
+/* 검색창 박스 */
+.character-bar {
+  display: flex;
+  width: 100%;
+  height: 150%;
+  border-radius: 12px;
+  background-image: url(/public/img/all.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(-20px);
+}
+
+/* 입력창 */
+.character-bar__input {
+  flex: 1;
+  padding: 13px 12px;
+  border: none;
+  font-size: 14px;
+  color: #333;
+  background-color: #d4e4d2;
+}
+
+.character-bar__input:focus {
+  outline: none;
+}
+
+/* 버튼 */
+.character-bar__button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #4A6B4C;  /* 포인트 컬러 */
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: bold;
+}
+
+.character-bar__button:hover {
+  background-color: #3e5740;
+}

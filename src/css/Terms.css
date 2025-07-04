@@ -1,0 +1,36 @@
+.info-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'SUIT', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.info-page h1 {
+  font-size: 28px;
+  color: #4b644a;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.info-page h2 {
+  font-size: 20px;
+  color: #5f7c5b;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 6px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.info-page p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.info-page p:last-child {
+  margin-bottom: 0;
+}

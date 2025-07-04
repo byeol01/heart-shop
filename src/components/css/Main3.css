@@ -1,0 +1,111 @@
+#section3 {
+  border-top: 3px dashed #ffcf85;
+}
+
+#section3 .wrap {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section3-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  width: fit-content;
+  position: absolute;
+  left: 60px;
+  top: 100px;
+}
+
+#section3 .slider {
+}
+
+#section3 .slider li {
+  border-radius: 20px;
+}
+
+#section3 .slider li a.block {
+}
+
+#section3 .slider li a.block img {
+}
+
+#section3 button {
+  padding: 10px;
+  width: 120px;
+  position: absolute;
+  right: 0;
+  bottom: -60px;
+  opacity: 0;
+}
+/* src/css/Main3.css */
+.slider {
+  display: flex;
+  overflow: hidden;
+  height: 500px;
+  gap: 30px;
+}
+
+.panel {
+  flex: 1;
+  transition: flex 0.5s ease;
+  overflow: hidden;
+  cursor: pointer;      /* 클릭 가능 표시 */
+}
+
+.panel.open { flex: 10; }
+.panel.closed { flex: 1; }
+
+.panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+  gap: 20px;
+}
+
+.dot {
+  width: 120px;
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.dot.active {
+
+  transform: scale(1.2);
+}
+.dots .dot:nth-child(1){
+    background:#F5CACA;
+}
+.dots .dot:nth-child(2){
+    background: #B3CDE0;
+}
+.dots .dot:nth-child(3){
+    background:#FFCEA6;
+}
+.dots .dot:nth-child(4){
+    background: #D6CDEA;
+    margin: 0;
+}

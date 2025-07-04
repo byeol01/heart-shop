@@ -1,0 +1,49 @@
+.footer {
+  background-color: var(--footer-color);
+  padding: 33px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #4b644a;
+  border-top: 3px dashed #b8d8b3;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+} */
+
+.site-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #7aa87a;
+  /* 민트 계열 강조 */
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-links a {
+  color: #5f7c5b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #a2cfa1;
+  /* 민트 계열 밝은 톤으로 hover */
+  font-weight: bold;
+}
+
+footer p {
+  margin: 6px 0;
+}

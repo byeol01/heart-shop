@@ -1,0 +1,91 @@
+/* PpmiRecommend.css */
+
+/* 📌 공통 스타일 (PC 기본) */
+.joy-recommend-section {
+  background-color: #ffeef5;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+.joy-recommend-section h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.recommend-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.recommend-card {
+  width: 260px;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.recommend-card:hover {
+  transform: scale(1.03);
+}
+
+.card-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  font-size: 12px;
+  height: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-overlay h4 {
+  font-size: 15px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+/* 📱 모바일 반응형: 슬라이드 형태 */
+@media (max-width: 767px) {
+  .joy-recommend-section .wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .recommend-wrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 12px;
+    padding-inline: 10px;
+    width: 100% !important;
+  }
+
+  .recommend-card {
+    min-width: 60%;
+    max-width: 260px;
+    height: 220px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .recommend-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}

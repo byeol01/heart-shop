@@ -1,0 +1,293 @@
+/* 구글폰트 */
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.modal-input:focus {
+  outline: none;
+  border: 2px solid #e3b77f;
+  /* box-shadow: 0 0 0 4px #f9e8d6; 말랑말랑한 glow 효과 */
+  /* border: 1px dashed #f2e5cd; */
+}
+
+/* 레이아웃 스타일링 */
+main {
+  height: 100%;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  다크모드 */
+:root {
+  /* 🌞 라이트모드 변수 */
+
+  /* 전체 배경 및 텍스트 */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --gray-color: #858585;
+
+  /* 중립 색상 스케일 */
+  --color-neutral-700: #181818;
+  --color-neutral-500: #383838;
+  --color-neutral-300: #858585;
+  --color-neutral-100: #ffffff;
+
+
+  /* 레이아웃 관련 */
+  --container-bg: #ffffff;
+  --main-color: #b8d8b3;
+  --hearder-color: #B8D8B3;
+  --footer-color: #f6f5c1;
+
+
+
+  /* 챗봇 관련 */
+  --chat-bg: #fff6c3;
+  --chat-toolbar: #fffce9;
+  --bot-bg: #ffffff;
+  --bot-text: #333333;
+  --user-bg: #b8d8b3;
+  --user-text: #ffffff;
+
+  /* 포인트 컬러 및 기타 */
+  --accent-color: #4a6b4c;
+  --scroll-thumb: #cccccc;
+  --search-bg: #fff8e7;
+  --search-text: #8b6f57;
+  --tag-text: #5f4b3b;
+
+  /* 모바일 */
+  --mobile-bg: #F7F7E5;
+}
+
+[data-theme='dark'] {
+  /* 🌙 다크모드 변수 */
+
+  /* 전체 배경 및 텍스트 */
+  --bg-color: #1d1c1c;
+  --text-color: #eeeeee;
+  --gray-color: #eeeeee;
+
+  /* 중립 색상 스케일 (역전된 밝기) */
+  --color-neutral-700: #dddddd;
+  --color-neutral-500: #f9f9f9;
+  --color-neutral-300: #b3b3b3;
+  --color-neutral-100: #e4e4e4;
+  /*  */
+
+  /* 레이아웃 관련 */
+  --container-bg: #3a3a3a;
+  --main-color: #4a6b4c;
+  --hearder-color: #0A2207;
+  --footer-color: #464631;
+
+
+  /* 챗봇 관련 */
+  --chat-bg: #3a3a3a;
+  --chat-toolbar: #242418;
+  --bot-bg: #242418;
+  --bot-text: #f1f1f1;
+  --user-bg: #5e8c61;
+  --user-text: #ffffff;
+
+  /* 포인트 컬러 및 기타 */
+  --accent-color: #90e3a3;
+  --scroll-thumb: #666666;
+  --search-bg: #716b5c;
+  --search-text: #2e2116;
+  --tag-text: #352010;
+
+  /* 모바일 */
+  --mobile-bg: #2D2D2D;
+
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 레이아웃 */
+.wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  /*! height: 100%; */
+}
+
+nav a {
+  display: block;
+}
+
+.block {
+  display: block;
+}
+
+/* 칼라 */
+.white,
+.white a {
+  color: white;
+}
+
+.gray {
+  color: #aeb0b2;
+}
+
+.black,
+.black a {
+  color: black;
+}
+
+/* 버튼 */
+.btn16 {
+  font-size: 14px;
+}
+
+.roundbtn {
+
+  width: fit-content;
+  padding: 0 20px;
+  border: 1px solid #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  gap: 20px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.more {
+  border: 1px solid #fff;
+  line-height: 1;
+  padding: 11px 20px;
+  color: white;
+  transition: 0.5s;
+}
+
+.more:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.more::after {
+  content: "+";
+  margin-left: 10px;
+  transition: 0.5s;
+  position: relative;
+  left: 0px;
+}
+
+.more:hover::after {
+  left: 10px;
+}
+
+/* 텍스트 스타일링 */
+.h1 {
+  font-size: calc(66px * 0.404);
+}
+
+.h2 {
+  font-size: 54px;
+}
+
+.h3 {
+  font-size: 35px;
+}
+
+.h4 {
+  font-size: 25px;
+}
+
+.h5 {
+  font-size: 15px;
+}
+
+.menu {
+  font-size: 14px;
+}
+
+.submenu {
+  font-size: 16px;
+}
+
+.titlep {
+  font-size: 12px;
+}
+
+.p {
+  font-size: 18px;
+}
+
+.m {
+  font-size: 16px;
+}
+
+.sm {
+  font-size: 14px;
+}
+
+.xs {
+  font-size: 12px;
+}
+
+footer .sm {
+
+  font-size: 10px;
+}
+
+footer .xs {
+
+  font-size: 10px;
+}
+
+/*  end  */
+
+:root[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}

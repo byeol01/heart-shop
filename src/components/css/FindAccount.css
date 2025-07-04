@@ -1,0 +1,194 @@
+/* 전체 배경 및 레이아웃 */
+.auth-page {
+  width: 100%;
+  min-height: auto;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-modal {
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 100px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+/* 모달 닫기 버튼 */
+.modal-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+  transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.2);
+  color: #90c690;
+}
+
+/* 상단 탭 버튼 */
+.tabs {
+  display: flex;
+  gap: 12px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.tab {
+  flex: 1;
+  background: #88b684;
+  color: white;
+  padding: 14px 0;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 32px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.15);
+}
+
+.tab.active {
+  background: #2e7d32;
+  box-shadow: 0 6px 10px rgb(0 0 0 / 0.3);
+}
+
+/* 폼 */
+.auth-form {}
+
+/* 설명 텍스트 */
+.find-description {
+  font-size: 14px;
+  color: #4b7f4b;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 25px;
+  padding: 14px 20px;
+  background: #e3f0df;
+  border-radius: 12px;
+}
+
+/* 입력 그룹 */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  min-width: 300px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 2px solid #c8e6c9;
+  background: #f7faf3;
+  font-size: 15px;
+  color: #2e7d32;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+
+}
+
+.input-group input::placeholder {
+  color: #9fbc9e;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #88b684;
+  background: white;
+  box-shadow: 0 0 8px rgba(136, 182, 132, 0.4);
+}
+
+/* 인증번호 받기 버튼 + 입력 */
+.input-with-button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.input-with-button input {
+  flex: 1;
+}
+
+.verify-button {
+  padding: 14px 20px;
+  background: #88b684;
+  border: none;
+  border-radius: 16px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.verify-button:hover {
+  background: #7aaa72;
+  transform: translateY(-1px);
+}
+
+/* 메인 제출 버튼 */
+.main-button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 16px 0;
+  background: linear-gradient(135deg, #88b684 0%, #a4c99c 100%);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main-button:hover {
+  background: linear-gradient(135deg, #7aaa72 0%, #98b98e 100%);
+  transform: translateY(-2px);
+}
+
+/* 뒤로가기 버튼 (폼 하단) */
+.back-button {
+  margin-top: 20px;
+  padding: 12px 0;
+  width: 100%;
+  background: transparent;
+  border: 2px solid #2e7d32;
+  border-radius: 24px;
+  font-weight: 700;
+  color: #2e7d32;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.back-button:hover {
+  color: #002502;
+  transform: translateY(-2px);
+}

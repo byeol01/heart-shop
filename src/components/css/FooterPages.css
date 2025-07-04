@@ -1,0 +1,64 @@
+.footer-pages-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  min-height: calc(100vh - 250px);
+  position: relative;
+  /* 부모가 상대 위치 */
+}
+
+.footer-nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.footer-nav-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ffd1dc;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-nav-buttons button:hover {
+  background-color: #ffaecb;
+}
+
+.footer-slide-container {
+  position: relative;
+  overflow: auto;
+  min-height: 500px;
+  width: 100%;
+  /* 가로 너비 100%로 명시 */
+}
+
+.footer-slide {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* 아래 추가: 내부 영역 배경 및 패딩 */
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 300px;
+  /* 최소 높이 지정 */
+}
+
+@media (max-width: 767px) {
+  .mobile-only-footer {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-only-footer {
+    display: none;
+  }
+}

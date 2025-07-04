@@ -1,0 +1,148 @@
+/* 전체 컨테이너 */
+.local-classes-wrapper {
+  padding: 20px;
+  background-color: #fffef8;
+  transform: translateY(-30%);
+  transition: transform 0.3s ease;
+}
+
+/* 타이틀 */
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* 지역 버튼 */
+.region-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.region-buttons button {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border: 2px solid #ffd77a;
+  border-radius: 20px;
+  background-color: #fff8e7;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.region-buttons button.active {
+  background-color: #ffd77a;
+  font-weight: bold;
+  color: #000;
+}
+
+.region-buttons button:hover {
+  background-color: #ffe08c;
+}
+
+/* 슬라이드 전체 영역 */
+.local-class-section {}
+
+/* 클래스 카드 */
+.class-card {
+  background-color: #fefae0;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+
+/* 클래스 이미지 */
+.class-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* 클래스 이름 */
+.class-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+  text-align: center;
+}
+
+/* 클래스 설명 */
+.class-desc {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* 클래스 위치 */
+.class-location {
+  font-size: 0.85rem;
+  color: #999;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* 신청하기 버튼 */
+.apply-btn {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffd77a;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+  background-color: #fbc02d;
+}
+
+/* 반응형 대응 */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .region-buttons {
+    justify-content: center;
+  }
+
+  .class-card {
+    padding: 12px;
+  }
+
+  .class-img {
+    height: 130px;
+  }
+
+  .class-name {
+    font-size: 1rem;
+  }
+
+  .apply-btn {
+    font-size: 0.9rem;
+  }
+
+  /* 찜 버튼 */
+  .like-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+}

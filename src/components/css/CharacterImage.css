@@ -1,0 +1,27 @@
+.character-image-wrapper {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffd3e0;
+  background-color: #fff;
+}
+
+/* 프로필 변경 텍스트 */
+.change-hint {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #888;
+  white-space: nowrap;
+}

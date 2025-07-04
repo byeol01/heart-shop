@@ -1,0 +1,139 @@
+/* src/css/Main1.css */
+
+#section1 {
+  /* 섹션 전체 패딩/마진 조절 가능 */
+}
+
+/* ───────────────────────────────────────
+   Main1 레이아웃: 챗봇 · 랭킹 · 검색창 · 캐릭터 카드
+──────────────────────────────────────── */
+#section1 .main1-content {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows:
+    430px
+    /* 1행: 챗봇(왼쪽) + 랭킹(오른쪽), 높이 고정 */
+    auto
+    /* 2행: 검색창(오른쪽) */
+    auto;
+  /* 3행: 캐릭터 카드(전체) */
+}
+
+/* 1) 챗봇 (왼쪽 상단) */
+#section1 .ai {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  height: 430px;
+  overflow: hidden;
+  min-height: 0;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 4) 추천 캐릭터 카드 (하단 전체) */
+#section1 .character {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+#section1 .character-list {
+  display: flex;
+  gap: 50px;
+}
+
+#section1 .character-list li {
+  text-align: center;
+  padding: 8px;
+  width: 25%;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-repeat: no-repeat;
+}
+
+#section1 .character-list li:nth-child(1) {
+  background-color: #F5CACA;
+}
+
+#section1 .character-list li:nth-child(2) {
+  background-color: #B3CDE0;
+}
+
+#section1 .character-list li:nth-child(3) {
+  background-color: #FFCEA6;
+}
+
+#section1 .character-list li:nth-child(4) {
+  background-color: #D6CDEA;
+}
+
+#section1 .character-list li h3 {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#section1 .character-list li h3::before {
+  content: '';
+  display: block;
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#section1 .character-list li:nth-child(1) h3::before {
+  background-image: url(../img/happy.png);
+}
+
+#section1 .character-list li:nth-child(2) h3::before {
+  background-image: url(../img/sad.png);
+}
+
+#section1 .character-list li:nth-child(3) h3::before {
+  background-image: url(../img/angry.png);
+}
+
+#section1 .character-list li:nth-child(4) h3::before {
+  background-image: url(../img/afraid.png);
+}
+
+#section1 .character-list li p {
+  font-size: 13px;
+  color: #666;
+  padding: 0 27px;
+}
+
+#section1 .character-list li a {
+  padding: 8px;
+  background-color: white;
+  width: fit-content;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+#section1 .character-list li a::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(../img/svg/arrowaudio.svg);
+  transform: translateY(2px);
+  opacity: 0.7;
+}
